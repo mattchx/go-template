@@ -1,0 +1,22 @@
+package user
+
+import (
+	"go-project-template/view/layout"
+	"go-project-template/model"
+	"go-project-template/view/component"
+)
+
+var content = "click me"
+
+templ Show(user model.User) {
+	@layout.Base() {
+		<h1>hello { user.Email } from the user page</h1>
+		@component.Button(content)
+	}
+}
+
+// Alternative way to pass props to component with struc
+// @component.Button(component.ButtonProps{
+//             Content: "click me",
+//             OnClick: "alert('clicked')",
+//         })
