@@ -1,0 +1,24 @@
+package component
+
+var greeting = "Welcome!"
+
+script handleClick() {
+    alert("Hello! You are using Templ!!");
+}
+
+templ button() {
+	<button onClick={ handleClick() }>Click me</button>
+}
+
+// templ Component
+templ Header(name string) {
+	<header id="parent">
+		<p>"{ greeting }" to our website</p>
+		<button
+			hx-post="/clicked"
+      hx-swap="outerHTML"
+		>
+			{ name }
+		</button>
+	</header>
+}
